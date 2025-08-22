@@ -7,14 +7,26 @@ import Image from 'next/image';
 
 const Logo: React.FC = () => {
     const [isHovered, setIsHovered] = useState(false);
-    const radius = 36;
-    const circumference = 2 * Math.PI * radius;
-    const logoSize = 30;
+    const radius = 70;
+    const strokeRadius = 42;
+    const circumference = 2 * Math.PI * strokeRadius;
+    const logoRadius = 30;
 
     const ringStyle = {
         strokeDasharray: circumference,
         strokeDashoffset: isHovered ? 0 : circumference,
         transition: 'stroke-dashoffset 0.5s ease-in-out',
+    };
+
+    const glassmorphismStyles: React.CSSProperties = {
+        background: isHovered ? 'rgba(24, 57, 50, 0.9)' : 'rgba(24, 57, 50, 0.7)',
+        backdropFilter: 'blur(4px) saturate(150%)',
+        WebkitBackdropFilter: 'blur(4px) saturate(150%)',
+        width: `${radius}px`,
+        height: `${radius}px`,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
     };
 
     return (
@@ -24,12 +36,16 @@ const Logo: React.FC = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <svg viewBox="0 0 104 104">
-                <circle cx="52" cy="52" r={radius} fill="none" stroke="white" strokeWidth="5" transform="rotate(-90 52 52)" style={ringStyle} />
+            <svg viewBox="0 0 104 104" className="absolute">
+                <circle cx="52" cy="52" r={strokeRadius} fill="none" stroke="white" strokeWidth="5" transform="rotate(-90 52 52)" style={ringStyle} />
             </svg>
-            <div className={`absolute flex items-center justify-center w-26 h-26 bg-[#183932]/70 backdrop-blur-md rounded-full shadow-lg transition-transform duration-300 ease-in-out 
-                    ${isHovered ? 'scale-80' : 'scale-100'}`} >
-                <Image src={logoUrl} alt="AryomG Logo" width={logoSize} height={logoSize} />
+            <div 
+                className={`absolute rounded-full shadow-xl border border-white/20 transition-all duration-300 ease-in-out hover:shadow-2xl hover:border-white/30 ${
+                    isHovered ? 'scale-85' : 'scale-100'
+                }`}
+                style={glassmorphismStyles}
+            >
+                <Image src={logoUrl} alt="AryomG Logo" width={logoRadius} height={logoRadius} />
             </div>
         </Link>
     );

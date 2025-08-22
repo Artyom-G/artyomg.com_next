@@ -6,6 +6,7 @@ import { loadFull } from "tsparticles";
 import particles from "@/assets/particles";
 import { useRouter } from "next/navigation";
 import { ReactTyped } from "react-typed";
+import Button from "@/components/Button";
 
 export default function Home() {
     const router = useRouter();
@@ -36,7 +37,7 @@ export default function Home() {
             <div id="home" className="relative flex flex-col justify-center items-center min-h-screen text-white gap-8" >
                 {/* Text Section */}
                 <div className="flex justify-center items-center pt-24 text-center">
-                    <h1 className="font-medium text-[clamp(2.5rem,8vw,8rem)] leading-[clamp(3rem,10vw,10rem)] overflow-hidden whitespace-nowrap">
+                    <h1 className="font-semibold text-[clamp(3rem,8vw,7rem)] leading-[clamp(3.2rem,9vw,7.5rem)] tracking-tight overflow-hidden whitespace-nowrap">
                         Hello, I am Artyom
                         <br />
                         I am{" "}
@@ -61,16 +62,17 @@ export default function Home() {
 
                 {/* Contact Button */}
                 <div className="w-full flex justify-center mt-6">
-                    <button
+                    <Button
                         onClick={handleNavigateToContact}
+                        size="lg"
                         className="w-full min-w-[280px] max-w-[680px] shadow-lg"
                     >
                         Send Me a Message
-                    </button>
+                    </Button>
                 </div>
 
                 {/* Footer */}
-                <div className="fixed bottom-10 right-10 w-full p-6 text-right text-white/40 text-[clamp(1rem,2vw,1.2rem)]">
+                <div className="fixed bottom-10 right-10 w-full p-6 text-right text-white/60 text-[clamp(0.875rem,1.5vw,1rem)] font-medium tracking-wide">
                     This is a Next.js Website, the Source Code can be Found{" "}
                     <a
                         href="https://github.com/Artyom-G/artyomg.com"
