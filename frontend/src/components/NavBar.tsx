@@ -31,10 +31,10 @@ const NavBar: React.FC = () => {
 
     return (
         <header className="flex justify-center fixed top-0 left-0 right-0 z-50 w-full px-6 py-4">
-            <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-4">
+            <nav className="mx-auto flex w-full max-w-[1200px] items-center justify-between px-4">
                 <Logo />
                 <div 
-                    className="flex items-center space-x-8 rounded-full border border-white/20 px-16 py-5 shadow-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl hover:border-white/30 min-w-[480px]"
+                    className="flex justify-center items-center space-x-8 rounded-full px-16 py-5 shadow-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl min-w-[480px]"
                     style={glassmorphismStyles}
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}

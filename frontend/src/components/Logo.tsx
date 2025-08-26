@@ -37,12 +37,10 @@ const Logo: React.FC = () => {
             onMouseLeave={() => setIsHovered(false)}
         >
             <svg viewBox="0 0 104 104" className="absolute">
-                <circle cx="52" cy="52" r={strokeRadius} fill="none" stroke="white" strokeWidth="5" transform="rotate(-90 52 52)" style={ringStyle} />
+                <circle cx="52" cy="52" r={strokeRadius} fill="none" stroke={isHovered ? 'rgba(24, 57, 50, 0.9)' : 'rgba(24, 57, 50, 0.7)'} strokeWidth="5" transform="rotate(-90 52 52)" style={ringStyle} />
             </svg>
             <div 
-                className={`absolute rounded-full shadow-xl border border-white/20 transition-all duration-300 ease-in-out hover:shadow-2xl hover:border-white/30 ${
-                    isHovered ? 'scale-85' : 'scale-100'
-                }`}
+                className={`absolute rounded-full shadow-xl transition-all duration-300 ease-in-out hover:shadow-2xl ${isHovered ? 'scale-85' : 'scale-100'}`}
                 style={glassmorphismStyles}
             >
                 <Image src={logoUrl} alt="AryomG Logo" width={logoRadius} height={logoRadius} />
