@@ -54,13 +54,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
                     ),
                     youtube: ({ embedid }) => <MarkdownRendererYoutube embedId={embedid} />,
                     picture: ({ src, alt }) => <MarkdownRendererImage src={src} alt={alt} />,
-                    embed: ({ src, width, height, scrolling }) => (
-                        <MarkdownRendererIFrame
-                            src={src}
-                            width={width}
-                            height={height}
-                            scrolling={scrolling}
-                        />
+                    embed: ({ src, width, height, scrolling }) => (<MarkdownRendererIFrame src={src} width={width} height={height} scrolling={scrolling} />
                     ),
                 }}
             >

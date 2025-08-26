@@ -1,5 +1,39 @@
 [
     {
+        "title": "Spellbooks",
+        "filters":["Featured", "Web", "AI"],
+        "tags": [
+            "React.js",
+            "FastAPI",
+            "GeminiAPI",
+            "Docker",
+            "MongoDB",
+            "Electron",
+            "Tailwind"
+        ],
+        "link": "https://github.com/ikesicle/spurhacks-25-proj"
+    },
+    {
+        "title": "Pokéle",
+        "filters":["Web"],
+        "tags": [
+            "Python Flask",
+            "React.js",
+            "PostgreSQL"
+        ],
+        "link": "https://pokele.artyomg.com"
+    },
+    {
+        "title": "Rats and Shells",
+        "filters":["Featured", "GameDev"],
+        "tags": [
+            "Unity",
+            "C#",
+            "OOP"
+        ],
+        "link": "https://artyomg.itch.io/tower-defense"
+    },
+    {
         "title": "EcoSim",
         "filters":["Featured", "GameDev"],
         "tags": [
@@ -8,7 +42,58 @@
             "Blender",
             "Perlin Noise"
         ],
-        "link": "https://i.simmer.io/@TurboKozel/ecosim"
+        "link": "https://artyomg.itch.io/ecosim"
+    },
+    {
+        "title": "Gatalinie",
+        "filters":["Featured", "WebDev"],
+        "tags": [
+            "React.js",
+            "Express.js",
+            "EmailJS",
+            "Figma"
+        ],
+        "link": "https://gatalinie.com/"
+    },
+    {
+        "title": "Hexapawn AI",
+        "filters":["AI"],
+        "tags": [
+            "Unity",
+            "C#",
+            "Machine Learning"
+        ],
+        "link": "https://i.simmer.io/@TurboKozel/hexapawn-ai"
+    },
+    {
+        "title": "Mitosis Stage Cell ML Image Sorter",
+        "filters":["Featured", "AI"],
+        "tags": [
+            "Python",
+            "Tensorflow",
+            "CNN",
+            "Machine Learning"
+        ],
+        "link": "https://drive.google.com/file/d/18-1wQcQyEbK7ry8htFwO05ebDA2qyWfj/view?usp=sharing"
+    },
+    {
+        "title": "UW Orbital",
+        "filters":["Featured", "Firmware"],
+        "tags": [
+            "Firmware",
+            "C"
+        ],
+        "link": "https://www.uworbital.com/mission"
+    },
+    {
+        "title": "willchai.com",
+        "filters":["Featured", "WebDev"],
+        "tags": [
+            "React.js",
+            "Git",
+            "Figma"
+        ],
+        "link": "https://github.com/Artyom-G/willchai.com"
     },
     {
         "title": "FitFeed",
@@ -23,14 +108,77 @@
         "link": "https://github.com/Artyom-G/FitFeed"
     },
     {
-        "title": "Gatalinie",
+        "title": "Thread by Thread Screenplay Formatter",
+        "filters":[],
+        "tags": [
+            "Google AppScripts", 
+            "Film Production"
+        ],
+        "link": "https://github.com/Artyom-G/Movie-Screenplay-Google-Doc-Formatter"
+    },
+    {
+        "title": "Ragdoll Smash",
+        "filters":["GameDev"],
+        "priority": "165",
+        "tags": [
+            "Unity",
+            "C#",
+            "OOP"
+        ],
+        "link": "https://watt-tech.itch.io/ragdoll-smash"
+    },
+    {
+        "title": "Commercial Photography Website",
+        "filters":["Featured", "Web"],
+        "tags": [
+            "React.js"
+        ],
+        "link": "https://photo.artyomg.com"
+    },
+    {
+        "title": "Pokemon Showdown Bot",
+        "filters":["AI"],
+        "tags": [
+            "Python",
+            "Showdown API",
+            "Graph Theory",
+            "Node.js"
+        ],
+        "link": ""
+    },
+    {
+        "title": "Reddit to Instagram Bot",
+        "filters":[],
+        "tags": [
+            "Python",
+            "Firebase",
+            "Google Cloud",
+            "Selenium Webdriver",
+            "Instagram API",
+            "PRAW"
+        ],
+        "link": "https://replit.com/@ArtyomGabtraupo/Instagram-Bot"
+    },
+    {
+        "title": "Scattered Letters",
+        "filters":["Featured", "GameDev"],
+        "tags": [
+            "Unity",
+            "C#",
+            "OOP"
+        ],
+        "link": "https://i.simmer.io/@TurboKozel/scattered-letters"
+    },
+    {
+        "title": "SOCIS",
         "filters":["Featured", "WebDev"],
+        "priority": "134",
         "tags": [
             "React.js",
-            "Express.js",
-            "EmailJS",
-            "Figma"
+            "Git",
+            "Next.js",
+            "PostgreSQL"
         ],
-        "link": "https://github.com/Artyom-G/gatalinie.com"
+        "link": "https://socis.ca"
     }
 ]
