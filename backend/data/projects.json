@@ -14,7 +14,7 @@
         "link": "https://github.com/ikesicle/spurhacks-25-proj"
     },
     {
-        "title": "Pokéle",
+        "title": "Pokele",
         "filters":["Web"],
         "tags": [
             "Python Flask",
@@ -46,7 +46,7 @@
     },
     {
         "title": "Gatalinie",
-        "filters":["Featured", "WebDev"],
+        "filters":["Featured", "Web"],
         "tags": [
             "React.js",
             "Express.js",
@@ -87,7 +87,7 @@
     },
     {
         "title": "willchai.com",
-        "filters":["Featured", "WebDev"],
+        "filters":["Featured", "Web"],
         "tags": [
             "React.js",
             "Git",
@@ -97,7 +97,7 @@
     },
     {
         "title": "FitFeed",
-        "filters":["Featured", "Mobile", "WebDev"],
+        "filters":["Featured", "Mobile", "Web"],
         "tags": [
             "React Native",
             "Firebase",
@@ -119,7 +119,6 @@
     {
         "title": "Ragdoll Smash",
         "filters":["GameDev"],
-        "priority": "165",
         "tags": [
             "Unity",
             "C#",
@@ -171,7 +170,7 @@
     },
     {
         "title": "SOCIS",
-        "filters":["Featured", "WebDev"],
+        "filters":["Featured", "Web"],
         "priority": "134",
         "tags": [
             "React.js",
