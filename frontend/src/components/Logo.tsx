@@ -8,9 +8,9 @@ import Image from 'next/image';
 const Logo: React.FC = () => {
     const [isHovered, setIsHovered] = useState(false);
     const radius = 70;
-    const strokeRadius = 42;
+    const strokeRadius = 28;
     const circumference = 2 * Math.PI * strokeRadius;
-    const logoRadius = 30;
+    const logoRadius = 32;
 
     const ringStyle = {
         strokeDasharray: circumference,

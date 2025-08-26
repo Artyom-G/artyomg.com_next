@@ -21,9 +21,9 @@ const NavBar: React.FC = () => {
     const [isHovered, setIsHovered] = useState(false);
 
     const glassmorphismStyles: React.CSSProperties = {
-        background: isHovered ? 'rgba(24, 57, 50, 0.9)' : 'rgba(24, 57, 50, 0.7)',
-        backdropFilter: 'blur(10px) saturate(150%)',
-        WebkitBackdropFilter: 'blur(10px) saturate(150%)',
+        background: isHovered ? 'rgba(24, 57, 50, 0.8)' : 'rgba(24, 57, 50, 0.7)',
+        backdropFilter: 'blur(4px) saturate(150%)',
+        WebkitBackdropFilter: 'blur(4px) saturate(150%)',
         minHeight: '70px',
         display: 'flex',
         alignItems: 'center',
@@ -34,7 +34,7 @@ const NavBar: React.FC = () => {
             <nav className="mx-auto flex w-full max-w-[1200px] items-center justify-between px-4">
                 <Logo />
                 <div 
-                    className="flex justify-center items-center space-x-8 rounded-full px-16 py-5 shadow-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl min-w-[480px]"
+                    className="flex justify-center items-center space-x-2 rounded-full py-1 shadow-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl min-w-[480px]"
                     style={glassmorphismStyles}
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}

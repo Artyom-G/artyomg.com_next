@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 :root {
     --primary-color: #093b28;
@@ -62,15 +66,7 @@
     height: 100%;
 }
 
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    scroll-behavior: smooth;
-}
-
 html {
-    font-size: 62.5%;
     height: 100%;
 }
 
@@ -114,13 +110,6 @@ p {
 
 a{
     color: var(--white-color);
-}
-
-/* Typography improvements */
-* {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
 }
 
 /* Button sizing overrides */
