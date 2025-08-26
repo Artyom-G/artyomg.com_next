@@ -16,10 +16,10 @@ const ContactPage: React.FC = () => {
 
         emailjs
             .sendForm(
-                process.env.EMAILJS_SERVICE_ID!,
-                process.env.EMAILJS_TEMPLATE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
                 form.current,
-                { publicKey: process.env.EMAILJS_PUBLIC_KEY! }
+                { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! }
             )
             .then(
                 () => {

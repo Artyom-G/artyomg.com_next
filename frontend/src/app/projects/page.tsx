@@ -9,12 +9,18 @@ export default function ProjectsPage(){
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        const responseProjects = fetch(BACKEND_API + "/projects/get_all_project_cards");
+        const fetchProjects = async () => {
+            try {
+                const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/projects/get_all_project_cards`);
+                const data = await res.json();
+                setProjects(data);
+            } catch (err) {
+                console.error("Failed to fetch projects:", err);
+            }
+        };
 
-        if(responseProjects?.data){
-            setProjects(responseProjects.data);
-        }
-    }, [])
+        fetchProjects();
+    }, []);
 
     return(
         <div>

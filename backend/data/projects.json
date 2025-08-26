@@ -1,0 +1,39 @@
+[
+    {
+        "title": "EcoSim",
+        "filters":["GameDev"],
+        "priority": "94",
+        "tags": [
+            "Unity",
+            "C#",
+            "Blender",
+            "Perlin Noise"
+        ],
+        "link": "https://i.simmer.io/@TurboKozel/icosim"
+    },
+    {
+        "title": "FitFeed",
+        "filters":["Featured", "Mobile", "WebDev"],
+        "priority": "110",
+        "tags": [
+            "React Native",
+            "Firebase",
+            "Google Cloud",
+            "Async Storage",
+            "Camera"
+        ],
+        "link": "https://github.com/Artyom-G/FitFeed"
+    },
+    {
+        "title": "Gatalinie",
+        "filters":["Featured", "WebDev"],
+        "priority": "90",
+        "tags": [
+            "React.js",
+            "EmailJS",
+            "Figma",
+            "Plesk"
+        ],
+        "link": "https://github.com/Artyom-G/gatalinie.com"
+    }
+]
