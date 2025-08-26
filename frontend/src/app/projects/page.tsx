@@ -7,6 +7,7 @@ import CircleButton from "@/components/CircleButton";
 import Image from "next/image";
 import arrow from "@/assets/arrow.svg";
 import LoadingScreen from "@/components/LoadingScreen";
+import { useRouter } from "next/navigation";
 
 type Project = {
     title: string;
@@ -18,6 +19,7 @@ type Project = {
 
 export default function ProjectsPage() {
     const BACKEND_API = process.env.NEXT_PUBLIC_BACKEND_API;
+    const router = useRouter();
 
     const [projects, setProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState(true);
@@ -55,7 +57,7 @@ export default function ProjectsPage() {
                     {projects.map((proj) => (
                         <button
                             key={proj.title}
-                            onClick={() => window.open(`/projects/${formatTitle(proj.title)}`, "_blank", "noopener,noreferrer")}
+                            onClick={() => router.push(`/${formatTitle(proj.title)}`)}
                             className="group relative block rounded-xl overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl text-left"
                         >
                             {/* Thumbnail */}
@@ -92,7 +94,7 @@ export default function ProjectsPage() {
                                     </div>
                                 </div>
                                 <div className="w-fit h-full flex flex-col justify-end align-bottom">
-                                    <CircleButton onClick={() => window.open(proj.link, "_blank", "noopener,noreferrer")} radius={50} strokeWidth={4}>
+                                    <CircleButton onClick={() => router.push(proj.link, "_blank")} radius={50} strokeWidth={4}>
                                         <Image src={arrow} alt={proj.title} />
                                     </CircleButton>
                                 </div>
