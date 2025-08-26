@@ -1,17 +1,32 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-
+import path from "path";
 import projectRoutes from "./routes/projects.js";
+import { fileURLToPath } from "url";
 
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 8000;
 
 // Middleware
-app.use(cors());
+app.use(
+    cors({
+        origin: "http://localhost:3000",
+        methods: ["GET", "POST", "PUT", "DELETE"],
+    })
+);
+
 app.use(express.json());
+
+app.use(
+  "/projects/thumbnails",
+  express.static(path.join(__dirname, "data", "thumbnails"))
+);
 
 // Routes
 app.use("/projects", projectRoutes);

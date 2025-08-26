@@ -10,6 +10,17 @@ const projects = JSON.parse(
   fs.readFileSync(path.join(__dirname, "../data/projects.json"), "utf-8")
 );
 
+// Utility: convert title to filename
+const formatTitle = (title) => title.toLowerCase().replace(/\s+/g, "_");
+
+// GET /projects/get_all_project_cards
 export const getAllProjectCards = (req, res) => {
-  res.json(projects);
+  const host = `${req.protocol}://${req.get("host")}`;
+
+  const projectsWithThumbnails = projects.map((proj) => ({
+    ...proj,
+    thumbnail: `${host}/projects/thumbnails/${formatTitle(proj.title)}.jpg`,
+  }));
+
+  res.json(projectsWithThumbnails);
 };

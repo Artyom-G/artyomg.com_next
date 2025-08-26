@@ -1,20 +1,18 @@
 [
     {
         "title": "EcoSim",
-        "filters":["GameDev"],
-        "priority": "94",
+        "filters":["Featured", "GameDev"],
         "tags": [
             "Unity",
             "C#",
             "Blender",
             "Perlin Noise"
         ],
-        "link": "https://i.simmer.io/@TurboKozel/icosim"
+        "link": "https://i.simmer.io/@TurboKozel/ecosim"
     },
     {
         "title": "FitFeed",
         "filters":["Featured", "Mobile", "WebDev"],
-        "priority": "110",
         "tags": [
             "React Native",
             "Firebase",
@@ -27,12 +25,11 @@
     {
         "title": "Gatalinie",
         "filters":["Featured", "WebDev"],
-        "priority": "90",
         "tags": [
             "React.js",
+            "Express.js",
             "EmailJS",
-            "Figma",
-            "Plesk"
+            "Figma"
         ],
         "link": "https://github.com/Artyom-G/gatalinie.com"
     }
