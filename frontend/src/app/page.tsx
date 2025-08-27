@@ -19,10 +19,10 @@ export default function HomePage() {
             <BackgroundParticles particles={particles}/>
 
             {/* Main Home Content */}
-            <div id="home" className="relative flex flex-col justify-center items-center min-h-screen text-white gap-8" >
+            <div id="home" className="relative flex flex-col justify-center items-center min-h-screen text-white" >
                 {/* Text Section */}
                 <div className="flex justify-center items-center pt-24 text-center">
-                    <h1 className="font-semibold text-[clamp(3rem,8vw,7rem)] leading-[clamp(3.2rem,9vw,7.5rem)] tracking-tight overflow-hidden whitespace-nowrap">
+                    <h1 className="serif font-semibold text-[clamp(2rem,8vw,4rem)] leading-[clamp(3rem,9vw,6rem)] tracking-tight overflow-hidden whitespace-nowrap mb-6">
                         Hello, I am Artyom
                         <br />
                         I am{" "}
@@ -46,18 +46,18 @@ export default function HomePage() {
                 </div>
 
                 {/* Contact Button */}
-                <div className="w-full flex justify-center mt-6">
+                <div className="w-full flex justify-center">
                     <Button
                         onClick={handleNavigateToContact}
-                        size="md"
-                        className="w-full min-w-[280px] max-w-[480px] shadow-lg"
+                        size="sm"
+                        className="w-[90%] max-w-[640px] shadow-lg"
                     >
                         Send Me a Message
                     </Button>
                 </div>
 
                 {/* Footer */}
-                <div className="fixed bottom-2 right-2 w-full p-6 text-right text-white/60 text-xs tracking-wide">
+                <div className="fixed bottom-2 right-2 w-full p-6 text-right text-white/40 text-xs tracking-wide">
                     This is a Next.js/Express.js Website, the Source Code can be Found{" "}
                     <a
                         href="https://github.com/Artyom-G/artyomg.com"
