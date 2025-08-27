@@ -11,7 +11,7 @@ I led a team of students to develop an isometric tower defense game built in Uni
 **OOP:** Used Object Oriented Programming structures to create the game logic. 
 
 <div>
-<embed src='https://i.simmer.io/@TurboKozel/rats-and-shells' width='1100' height='660'></embed>
+<embed src="https://itch.io/embed-upload/11285891?color=c7e5d6" width="960" height="660"></embed>
 </div>
 
 # Key Features

@@ -11,7 +11,7 @@ Try guessing "1" or "bulbasaur" (or any other pokemon) in the game window below!
 The solution at the top will appear different from day-to-day.
 
 <div>
-<embed src="https://pokele.artyomg.com" width="1140" height="698" scrolling='yes'></embed>
+<embed src="https://pokele.artyomg.com" width="900" height="600" scrolling='yes'></embed>
 </div>
 
 # Backend

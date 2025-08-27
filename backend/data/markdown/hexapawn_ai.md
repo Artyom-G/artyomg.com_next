@@ -14,5 +14,5 @@ The Hexapawn AI bot is an advanced implementation designed to play the classic g
 Experience the challenge for yourself: Play against the Hexapawn AI bot and see how quickly it learns your strategies. Good luck getting a win after 10 rounds!
 
 <div>
-<embed src='https://i.simmer.io/@TurboKozel/hexapawn-ai' width='1000' height='562'></embed>
+<embed src='https://itch.io/embed-upload/2952729?color=c7e5d6' width='1000' height='562'></embed>
 </div>

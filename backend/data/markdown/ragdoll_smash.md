@@ -10,17 +10,17 @@ This version builds upon the original concept, providing a chaotic and entertain
 This game supports up to 4 players in local multiplayer, with the option to use controllers. Each player controls a stickman, using a unique set of controls to move, jump, and push opponents off the edge. The last player remaining on the platform wins.
 
 <div>
-<embed src="https://i.simmer.io/@TurboKozel/ragdoll-smash" width="1140" height="698"></embed>
+<embed src="https://itch.io/embed-upload/2052147?color=c7e5d6" width="1140" height="698"></embed>
 </div>
 
 ## Controls
 
-- **Player 1**: `A`, `D`, `Space`, `S`, `Left Shift`
-- **Player 2**: `Left Arrow`, `Right Arrow`, `Up Arrow`, `Down Arrow`, `Right Shift`
-- **Player 3**: `[Number Pad] 1`, `3`, `5`, `2`, `Enter`
-- **Player 4**: `J`, `L`, `I`, `K`, `B`
+- **Player 1**: A, D, Space, S, Left Shift
+- **Player 2**: Left, Right, Up, Down, Right Shift
+- **Player 3**: [Num Pad] 1, 3, 5, 2, Enter
+- **Player 4**: J, L, I, K, B
 
-Use `R` to restart the game if needed.
+Use R to restart the game if needed.
 
 
 # Technologies Used

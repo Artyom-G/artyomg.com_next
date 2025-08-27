@@ -5,7 +5,7 @@
 Scattered Letters is a charming platformer game developed in Unity for Valentine's Day. In this delightful game, two bunnies (players) must work together to reach the end, navigating through various obstacles and challenges.
 
 <div>
-<embed src="https://i.simmer.io/@TurboKozel/scattered-letters" width="900" height="470"></embed>
+<embed src="https://itch.io/embed-upload/11054756?color=c7e5d6" width="900" height="520"></embed>
 </div>
 
 
