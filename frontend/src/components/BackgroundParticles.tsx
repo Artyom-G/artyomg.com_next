@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 
-export default function BackgroundParticles({ particles }) {
+export default function BackgroundParticles({ particles } : {particles: any}) {
     const [init, setInit] = useState(false);
 
     useEffect(() => {

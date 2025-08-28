@@ -94,9 +94,11 @@ export default function ProjectsPage() {
                                     </div>
                                 </div>
                                 <div className="w-fit h-full flex flex-col justify-end align-bottom">
-                                    <CircleButton onClick={() => router.push(proj.link, "_blank")} radius={50} strokeWidth={4}>
-                                        <Image src={arrow} alt={proj.title} />
-                                    </CircleButton>
+                                    <a href={proj.link} target="_blank" rel="noopener noreferrer">
+                                        <CircleButton radius={50} strokeWidth={4}>
+                                            <Image src={arrow} alt={proj.title} />
+                                        </CircleButton>
+                                    </a>
                                 </div>
                             </div>
                         </button>

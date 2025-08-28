@@ -6,7 +6,7 @@ interface MarkdownRendererYoutubeProps {
   embedId: string;
 }
 
-const MarkdownRendererYoutube: React.FC<MarkdownRendererYoutubeProps> = ({ embedId }) => {
+const MarkdownRendererYoutube: React.FC<MarkdownRendererYoutubeProps> = ({ embedId }: any) => {
   return (
     <div className="w-full max-w-4xl mx-auto my-8 aspect-video">
       <iframe

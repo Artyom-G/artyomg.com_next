@@ -2,10 +2,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+
   webpack(config) {
     // 1. Find the existing file-loader rule for images
     const fileLoaderRule = config.module.rules.find(
-      (rule) => typeof rule !== "string" && rule.test?.test?.(".svg")
+      (rule:any) => typeof rule !== "string" && rule.test?.test?.(".svg")
     );
 
     if (fileLoaderRule && typeof fileLoaderRule !== "string") {

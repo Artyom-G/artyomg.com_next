@@ -3,9 +3,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-const imagesContext = require.context('../assets', false, /\.(png|jpe?g|svg)$/);
+const imagesContext = (require as any).context('../assets', false, /\.(png|jpe?g|svg)$/);
 
-const MarkdownRendererImage = ({ src, alt="ArtyomG" }) => {
+const MarkdownRendererImage = ({ src, alt="ArtyomG" } : any) => {
     const [thumbnail, setThumbnail] = useState("https://preview.redd.it/help-this-image-couldnt-be-loaded-error-and-i-need-that-v0-71omzkrcy1la1.png?width=271&format=png&auto=webp&s=fe951e015ceb11f9990a1328ad7332d539c2ad8b");
 
     useEffect(() => {
