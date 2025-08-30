@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 8000;
 // Middleware
 app.use(
     cors({
-        origin: "https://api.artyomg.com/projects/",
+        origin: "https://api.artyomg.com",
         methods: ["GET", "POST", "PUT", "DELETE"],
     })
 );
