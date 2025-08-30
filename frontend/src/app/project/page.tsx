@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
 import Image from "next/image";
 import arrow from "@/assets/arrow.svg";
 import BackgroundParticles from "@/components/BackgroundParticles";
@@ -18,14 +17,20 @@ interface ProjectCard {
 }
 
 export default function ProjectPage() {
-    const params = useParams<{ id: string }>();
+    const [id, setId] = useState<string | null>(null);
     const [proj, setProj] = useState<ProjectCard | null>(null);
     const [markdown, setMarkdown] = useState<string>(""); 
     const [error, setError] = useState<string>("");
 
     useEffect(() => {
+        const url = new URL(window.location.href);
+        setId(url.searchParams.get("id"));
+    }, []);
+
+    useEffect(() => {
+        if (!id) return;
+
         const BACKEND_API = process.env.NEXT_PUBLIC_BACKEND_API;
-        const id = params.id;
 
         Promise.all([
             fetch(`${BACKEND_API}/projects/get_project_card/${id}`).then((r) => r.json()),
@@ -36,8 +41,9 @@ export default function ProjectPage() {
                 setMarkdown(md);
             })
             .catch(() => setError("Failed to load project"));
-    }, [params.id]);
+    }, [id]);
 
+    if (!id) return <div className="text-red-400">Missing project ID</div>;
     if (error) return <div className="text-red-400">{error}</div>;
     if (!proj) return <div className="text-gray-400">Loading...</div>;
 

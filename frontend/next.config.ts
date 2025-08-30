@@ -2,6 +2,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export",        // static export
+  distDir: "out",          // build output dir
+  trailingSlash: true,     // ensures static routing works
 
   webpack(config) {
     // 1. Find the existing file-loader rule for images

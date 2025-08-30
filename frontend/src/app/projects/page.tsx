@@ -57,7 +57,7 @@ export default function ProjectsPage() {
                     {projects.map((proj) => (
                         <button
                             key={proj.title}
-                            onClick={() => router.push(`/${formatTitle(proj.title)}`)}
+                            onClick={() => router.push(`project?id=${formatTitle(proj.title)}`)}
                             className="group relative block rounded-xl overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl text-left"
                         >
                             {/* Thumbnail */}
