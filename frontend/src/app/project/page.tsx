@@ -92,7 +92,7 @@ export default function ProjectPage() {
                 </div>
             )}
 
-            <div className="flex flex-col max-w-[1100px] mx-auto mt-8 p-6">
+            <div className="flex flex-col max-w-[1100px] mx-auto mt-8 p-6 mb-72">
                 <MarkdownRenderer>{markdown}</MarkdownRenderer>
             </div>
         </div>
