@@ -60,7 +60,7 @@ export default function HomePage() {
                 <div className="fixed bottom-2 right-2 w-full p-6 text-right text-white/40 text-xs tracking-wide">
                     This is a Next.js/Express.js Website, the Source Code can be Found{" "}
                     <a
-                        href="https://github.com/Artyom-G/artyomg.com"
+                        href="https://github.com/Artyom-G/artyomg.com_next"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="underline hover:text-white/70"
