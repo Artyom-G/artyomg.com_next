@@ -20,7 +20,7 @@ interface ProjectCard {
 export default function ProjectPage() {
     const params = useParams<{ id: string }>();
     const [proj, setProj] = useState<ProjectCard | null>(null);
-    const [markdown, setMarkdown] = useState<string>("");
+    const [markdown, setMarkdown] = useState<string>(""); 
     const [error, setError] = useState<string>("");
 
     useEffect(() => {
