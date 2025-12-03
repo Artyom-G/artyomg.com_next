@@ -63,8 +63,8 @@ export default function HomePage() {
                 <div className="fixed hidden md:block bottom-2 right-2 w-full p-6 text-right text-white/40 text-xs tracking-wide">
                     <div className="mt-3 flex flex-col justify-end gap-2">
                         <span className="inline-flex gap-2 justify-end">
-                            <a className="opacity-70 hover:opacity-100 transition-opacity duration-200" href='https://cs.uwatering.com/#artyomg.com?nav=prev'>←</a>
-                            <a className="opacity-70 hover:opacity-100 transition-opacity duration-200" href='https://cs.uwatering.com/#artyomg.com' target='_blank'>
+                            <a className="opacity-70 hover:opacity-100 transition-opacity duration-200" href='https://cs.uwatering.com/#https://artyomg.com?nav=prev'>←</a>
+                            <a className="opacity-70 hover:opacity-100 transition-opacity duration-200" href='https://cs.uwatering.com/#https://artyomg.com' target='_blank'>
                                 <img
                                     src='https://cs.uwatering.com/icon.white.svg'
                                     alt='CS Webring'
@@ -72,7 +72,7 @@ export default function HomePage() {
                                     style={{ width: '20px', height: 'auto', opacity: 0.8 }}
                                 />
                             </a>
-                            <a className="opacity-70 hover:opacity-100 transition-opacity duration-200" href='https://cs.uwatering.com/#artyomg.com?nav=next'>→</a>
+                            <a className="opacity-70 hover:opacity-100 transition-opacity duration-200" href='https://cs.uwatering.com/#https://artyomg.com?nav=next'>→</a>
                         </span>
                         <span>
                             This is a Next.js/Express.js Website, the Source Code can be Found{" "}
