@@ -61,38 +61,30 @@ export default function HomePage() {
 
                 {/* Footer */}
                 <div className="fixed hidden md:block bottom-2 right-2 w-full p-6 text-right text-white/40 text-xs tracking-wide">
-                    {/* CS Ring */}
-                    <div className="flex justify-center items-center">
-                        <a href="https://cs.uwatering.com/#artyomg.com?nav=prev" target="_blank" rel="noopener noreferrer" className="inline-flex">
-                            <CircleButton radius={40} strokeWidth={3}>
-                                <Image src={arrow} alt="arrow" className="rotate-180" />
-                            </CircleButton>
-                        </a>
-                        <a href="https://cs.uwatering.com/#artyomg.com" target="_blank" rel="noopener noreferrer" className="inline-flex">
-                            <CircleButton radius={55} strokeWidth={4}>
-                                <a href="https://cs.uwatering.com/#artyomg.com" target="_blank">
-                                    <img src="https://cs.uwatering.com/icon.white.svg" alt="CS Webring" className="w-[24px] opacity-[0.8] translate-x-[1px] translate-y-[2px]"/>
-                                </a>
-                            </CircleButton>
-                        </a>
-                        <a href="https://cs.uwatering.com/#artyomg.com?nav=next" target="_blank" rel="noopener noreferrer">
-                            <CircleButton radius={40} strokeWidth={3}>
-                                <Image src={arrow} alt="arrow" />
-                            </CircleButton>
-                        </a>
-                    </div>
-
-                    {/* Source Code */}
-                    <div className="mt-3">
-                        This is a Next.js/Express.js Website, the Source Code can be Found{" "}
-                        <a
-                            href="https://github.com/Artyom-G/artyomg.com_next"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="underline hover:text-white/70"
-                        >
-                            Here
-                        </a>
+                    <div className="mt-3 flex flex-col justify-end gap-2">
+                        <span className="inline-flex gap-2 justify-end">
+                            <a className="opacity-70 hover:opacity-100 transition-opacity duration-200" href='https://cs.uwatering.com/#your-site-here?nav=prev'>←</a>
+                            <a className="opacity-70 hover:opacity-100 transition-opacity duration-200" href='https://cs.uwatering.com/#your-site-here' target='_blank'>
+                                <img
+                                    src='https://cs.uwatering.com/icon.white.svg'
+                                    alt='CS Webring'
+                                    className="opacity-80 hover:opacity-100 transition-opacity duration-200" 
+                                    style={{ width: '20px', height: 'auto', opacity: 0.8 }}
+                                />
+                            </a>
+                            <a className="opacity-70 hover:opacity-100 transition-opacity duration-200" href='https://cs.uwatering.com/#your-site-here?nav=next'>→</a>
+                        </span>
+                        <span>
+                            This is a Next.js/Express.js Website, the Source Code can be Found{" "}
+                            <a
+                                href="https://github.com/Artyom-G/artyomg.com_next"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="underline hover:text-white/70"
+                            >
+                                Here
+                            </a>
+                        </span>
                     </div>
                 </div>
             </div>
