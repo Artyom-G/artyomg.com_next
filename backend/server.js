@@ -12,11 +12,12 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 8000;
+const FRONTEND = process.env.FRONTEND;
 
 // Middleware
 app.use(
     cors({
-        origin: "https://artyomg.com",
+        origin: FRONTEND,
         methods: ["GET", "POST", "PUT", "DELETE"],
     })
 );
