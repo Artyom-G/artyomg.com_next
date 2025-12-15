@@ -4,10 +4,7 @@ import particles from "@/assets/particles";
 import { useRouter } from "next/navigation";
 import { ReactTyped } from "react-typed";
 import Button from "@/components/Button";
-import CircleButton from "@/components/CircleButton";
 import BackgroundParticles from "@/components/BackgroundParticles";
-import Image from "next/image";
-import arrow from "@/assets/arrow.svg";
 
 export default function HomePage() {
     const router = useRouter();
