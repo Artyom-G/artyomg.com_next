@@ -109,11 +109,6 @@ export default function ProjectsPage() {
                             </button>
                         ))}
                     </div>
-
-                    {/* Footer / Ring */}
-                    <div className="w-full max-w-[1800px] flex flex-col mt-26 justify-end">
-                        <WaterlooCSRing />
-                    </div>
                 </div>
             </div>
         </div>
