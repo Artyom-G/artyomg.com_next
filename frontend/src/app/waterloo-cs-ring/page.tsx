@@ -29,7 +29,7 @@ export default function ProjectsPage() {
         <div className="relative w-full min-h-screen overflow-hidden text-white">
             <BackgroundParticles particles={particles} />
 
-            <div className="relative z-10 flex flex-col items-center justify-center text-center pt-72 px-6 space-y-6">
+            <div className="relative z-10 flex flex-col items-center justify-center text-center pt-52 px-6 space-y-6">
                 <h1 className="serif font-semibold text-[clamp(1.75rem,6vw,2.4rem)] tracking-tight">
                     Hello Traveler
                 </h1>
@@ -46,6 +46,8 @@ export default function ProjectsPage() {
                             claim cookie
                         </span>
                         .
+                        <br/>
+                        Oh, and the escape is down below
                     </p>
 
                     {/* Container for all cookies */}
@@ -70,10 +72,10 @@ export default function ProjectsPage() {
                     className="w-[90%] max-w-[320px] shadow-lg"
                     onClick={() => router.push("/")}
                 >
-                    Back to the main site
+                    Visit my site
                 </Button>
 
-                <div className="flex justify-center items-center mt-8 mb-32">
+                <div className="flex justify-center items-center mb-16">
                     <WaterlooCSRing />
                 </div>
             </div>
