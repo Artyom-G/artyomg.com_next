@@ -8,7 +8,6 @@ import Image from "next/image";
 import arrow from "@/assets/arrow.svg";
 import LoadingScreen from "@/components/LoadingScreen";
 import { useRouter } from "next/navigation";
-import WaterlooCSRing from "@/components/WaterlooCSRing";
 
 type Project = {
     title: string;
