@@ -14,7 +14,7 @@ Welcome to EcoSim, an ecological simulator designed to model the interactions an
 **Blender:** Used Blender for other 3D assets.
 
 <div>
-<embed src="https://itch.io/embed-upload/11329374?color=2e6886"></embed>
+<embed src="https://itch.io/embed-upload/11329374?color=2e6886" width="1300" height="800"></embed>
 </div>
 
 # Controls
