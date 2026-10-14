@@ -1,5 +1,20 @@
 [
     {
+        "title": "Self-Hosting Server",
+        "filters":["Featured", "Infrastructure"],
+        "tags": [
+            "Proxmox",
+            "KVM",
+            "Debian",
+            "Caddy",
+            "Cloudflare Tunnel",
+            "Tailscale",
+            "Samba",
+            "Jellyfin"
+        ],
+        "link": ""
+    },
+    {
         "title": "Spellbooks",
         "filters":["Featured", "Web", "AI"],
         "tags": [
