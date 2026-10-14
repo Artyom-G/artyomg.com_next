@@ -18,35 +18,43 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ children }) => {
                 rehypePlugins={[rehypeRaw]}
                 components={{
                     h1: ({ node, ...props } : any) => (
-                        <h1 className="text-3xl font-extrabold text-white drop-shadow-lg mb-6 mt-16" {...props} />
+                        <h1 className="serif text-3xl md:text-4xl font-semibold text-white mb-6 mt-14" {...props} />
                     ),
                     h2: ({ node, ...props } : any) => (
-                        <h2 className="text-2xl font-bold text-white drop-shadow-md mb-4 mt-12" {...props} />
+                        <h2 className="serif text-2xl md:text-3xl font-semibold text-white mb-4 mt-12 pb-2 border-b border-white/10" {...props} />
                     ),
                     h3: ({ node, ...props } : any) => (
-                        <h3 className="text-xl font-semibold text-white mb-3 mt-8" {...props} />
+                        <h3 className="text-xl font-semibold text-green-300 mb-3 mt-8" {...props} />
                     ),
                     p: ({ node, ...props } : any) => (
-                        <p className="text-gray-300 text-lg leading-relaxed mb-4 font-mono text-justify" {...props} />
+                        <p className="text-gray-300 text-[1.05rem] md:text-lg leading-8 mb-4" {...props} />
+                    ),
+                    ul: ({ node, ...props } : any) => (
+                        <ul className="list-disc pl-6 mb-4 marker:text-green-400" {...props} />
+                    ),
+                    ol: ({ node, ...props } : any) => (
+                        <ol className="list-decimal pl-6 mb-4 marker:text-green-400" {...props} />
                     ),
                     li: ({ node, ...props } : any) => (
-                        <li className="text-gray-300 text-lg leading-relaxed mb-2 font-mono" {...props} />
+                        <li className="text-gray-300 text-[1.05rem] md:text-lg leading-8 mb-1 pl-1" {...props} />
                     ),
                     a: ({ node, ...props } : any) => (
-                        <a className="text-cyan-400 hover:text-cyan-200 underline decoration-cyan-400" {...props} />
+                        <a className="text-green-300 underline decoration-green-400/50 underline-offset-4 hover:text-green-200 hover:decoration-green-300" {...props} />
                     ),
                     strong: ({ node, ...props } : any) => (
-                        <strong className="text-white font-bold" {...props} />
+                        <strong className="text-white font-semibold" {...props} />
                     ),
                     em: ({ node, ...props } : any) => (
-                        <em className="text-purple-300 italic" {...props} />
+                        <em className="text-white/90 italic" {...props} />
                     ),
                     blockquote: ({ node, ...props } : any) => (
-                        <blockquote className="border-l-4 border-pink-500 pl-4 italic text-gray-400 mb-4" {...props} />
+                        <blockquote className="glass rounded-r-xl border-l-4 border-green-400 px-5 py-3 italic text-gray-300 mb-4" {...props} />
+                    ),
+                    pre: ({ node, ...props } : any) => (
+                        <pre className="my-6 overflow-x-auto rounded-xl bg-black/40 p-5 text-sm leading-6 ring-1 ring-inset ring-white/10 [&>code]:bg-transparent [&>code]:p-0 [&>code]:ring-0" {...props} />
                     ),
                     code: ({ node, className, children, ...props } : any) => (
-                        <code className={`${true ? "px-1 py-0.5 rounded text-yellow-300 bg-gray-900 font-mono" : 
-                                "block p-4 my-4 rounded-lg bg-gray-900 text-yellow-300 font-mono overflow-x-auto"}`}
+                        <code className="px-1.5 py-0.5 rounded-md text-green-200 bg-black/40 font-mono text-[0.9em] ring-1 ring-inset ring-white/10"
                             {...props}
                         >
                             {children}

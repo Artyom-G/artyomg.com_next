@@ -8,6 +8,8 @@ interface LogoProps {
     radius: number;
     strokeWidth?: number;
     children?: React.ReactNode;
+    /** Use "span" when the button sits inside a link, since <button> can't be nested in <a> */
+    as?: "button" | "span";
 }
 
 const BASE = 70;
@@ -27,7 +29,7 @@ const ICON_BASE = 32;
 const RING_R_BASE_VB = 12;
 const RING_R_BASE_VB_CONSTANT = 16;
 
-const Logo: React.FC<LogoProps> = ({ onClick, radius, strokeWidth = 4, children }) => {
+const Logo: React.FC<LogoProps> = ({ onClick, radius, strokeWidth = 4, children, as: Tag = "button" }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     // Master scale relative to base design (70)
@@ -71,9 +73,9 @@ const Logo: React.FC<LogoProps> = ({ onClick, radius, strokeWidth = 4, children 
     };
 
     return (
-        <button
+        <Tag
             onClick={onClick}
-            className="relative flex items-center justify-center"
+            className="relative flex items-center justify-center cursor-pointer"
             style={{ width: outerPx, height: outerPx }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -106,7 +108,7 @@ const Logo: React.FC<LogoProps> = ({ onClick, radius, strokeWidth = 4, children 
                     {children}
                 </div>
             </div>
-        </button>
+        </Tag>
     );
 };
 

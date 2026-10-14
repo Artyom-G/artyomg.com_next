@@ -23,9 +23,8 @@ const Button: React.FC<ButtonProps> = ({
     outline-none
     border-none
     rounded-full
-    bg-transparent
     text-white
-    opacity-60
+    opacity-80
     transition-all
     duration-500
     ease-linear
@@ -33,6 +32,8 @@ const Button: React.FC<ButtonProps> = ({
     font-black
     font-sans
     hover:opacity-100
+    disabled:pointer-events-none
+    disabled:opacity-50
     hover:shadow-[12px_7px_15px_0px_rgba(12,56,52,0.56)]
     before:absolute
     before:content-['']
@@ -81,8 +82,8 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   const variantClasses = {
-    primary: '',
-    secondary: 'text-[#a6c267] hover:text-white'
+    primary: 'glass',
+    secondary: 'bg-transparent ring-1 ring-inset ring-white/20 hover:ring-transparent'
   };
 
   const combinedClasses = `

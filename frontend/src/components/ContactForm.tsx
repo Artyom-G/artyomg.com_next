@@ -2,18 +2,23 @@
 
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { CheckCircle2, XCircle } from "lucide-react";
 import Button from "@/components/Button";
+
+type Status = "idle" | "sending" | "sent" | "failed";
+
+const inputClasses =
+    "w-full rounded-xl bg-black/30 px-4 py-3 text-sm text-white placeholder:text-white/30 ring-1 ring-inset ring-white/10 transition-shadow focus:outline-none focus:ring-2 focus:ring-green-400";
 
 const ContactPage: React.FC = () => {
     const form = useRef<HTMLFormElement | null>(null);
-    const [isSent, setIsSent] = useState(false);
-    const [isSuccessful, setIsSuccessful] = useState(false);
-    const [isHovered, setIsHovered] = useState(false);
+    const [status, setStatus] = useState<Status>("idle");
 
     const sendEmail = (e: React.FormEvent) => {
         e.preventDefault();
         if (!form.current) return;
 
+        setStatus("sending");
         emailjs
             .sendForm(
                 process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
@@ -22,91 +27,96 @@ const ContactPage: React.FC = () => {
                 { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! }
             )
             .then(
-                () => {
-                    setIsSent(true);
-                    setIsSuccessful(true);
-                },
-                () => {
-                    setIsSent(true);
-                    setIsSuccessful(false);
-                }
+                () => setStatus("sent"),
+                () => setStatus("failed")
             );
-    };
-
-    const glassmorphismStyles: React.CSSProperties = {
-        background: isHovered ? "rgba(24, 57, 50, 0.8)" : "rgba(24, 57, 50, 0.7)",
-        backdropFilter: "blur(4px) saturate(150%)",
-        WebkitBackdropFilter: "blur(4px) saturate(150%)",
-        transition: "all 0.3s ease",
     };
 
     return (
         <div
             id="contact"
-            className="relative flex min-h-screen w-full items-center justify-center px-4 py-16"
+            className="relative flex min-h-screen w-full items-center justify-center px-4 pt-16 pb-32 sm:pt-32 sm:pb-16"
         >
-            {!isSent ? (
+            {status === "sent" || status === "failed" ? (
+                <div className="animate-fade-up glass flex w-full max-w-md flex-col items-center gap-4 rounded-2xl p-8 text-center shadow-2xl">
+                    {status === "sent" ? (
+                        <CheckCircle2 className="h-12 w-12 text-green-400" aria-hidden />
+                    ) : (
+                        <XCircle className="h-12 w-12 text-red-400" aria-hidden />
+                    )}
+                    <h1 className="serif text-2xl font-semibold text-white">
+                        {status === "sent" ? "Message sent!" : "Message failed to send"}
+                    </h1>
+                    <p className="text-sm text-white/60">
+                        {status === "sent"
+                            ? "Thanks for reaching out, I'll get back to you soon."
+                            : "Something went wrong on the way. Please try again."}
+                    </p>
+                    <Button size="sm" variant="secondary" onClick={() => setStatus("idle")}>
+                        {status === "sent" ? "Send another" : "Try again"}
+                    </Button>
+                </div>
+            ) : (
                 <form
                     ref={form}
                     onSubmit={sendEmail}
-                    style={glassmorphismStyles}
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
-                    className="w-full max-w-md rounded-xl p-6 shadow-xl space-y-4"
+                    className="animate-fade-up glass w-full max-w-md space-y-5 rounded-2xl p-6 shadow-2xl sm:p-8"
                 >
-                    <h2 className="mb-4 text-center text-2xl font-semibold text-white">
-                        Keep in Touch :)
-                    </h2>
+                    <div className="pb-3 text-center">
+                        <h1 className="serif text-3xl font-semibold text-white">
+                            Keep in Touch :)
+                        </h1>
+                        <p className="mt-2 text-sm text-white/60">
+                            Have a question, an idea, or just want to say hi?
+                        </p>
+                    </div>
 
-                    <div className="mb-6 transition-all duration-300 hover:shadow-2xl hover:mb-8">
-                        <label className="block mb-1 text-white text-sm">Name</label>
+                    <div>
+                        <label htmlFor="user_name" className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-white/70">Name</label>
                         <input
+                            id="user_name"
                             type="text"
                             name="user_name"
+                            autoComplete="name"
+                            placeholder="Your name"
                             required
-                            className="w-full resize-none rounded-b-xl bg-black/30 px-3 py-2 text-sm text-white shadow-xl focus:outline-none focus:ring-2 focus:ring-green-400"
+                            className={inputClasses}
                         />
                     </div>
 
-                    <div className="mb-6 transition-all duration-300 hover:shadow-2xl hover:mb-8">
-                        <label className="block mb-1 text-white text-sm">Email</label>
+                    <div>
+                        <label htmlFor="user_email" className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-white/70">Email</label>
                         <input
+                            id="user_email"
                             type="email"
                             name="user_email"
+                            autoComplete="email"
+                            placeholder="you@example.com"
                             required
-                            className="w-full resize-none rounded-b-xl bg-black/30 px-3 py-2 text-sm text-white shadow-xl focus:outline-none focus:ring-2 focus:ring-green-400"
+                            className={inputClasses}
                         />
                     </div>
 
-                    <div className="mb-6 transition-all duration-300 hover:shadow-2xl hover:mb-8">
-                        <label className="block mb-1 text-white text-sm">Message</label>
+                    <div>
+                        <label htmlFor="message" className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-white/70">Message</label>
                         <textarea
+                            id="message"
                             name="message"
+                            placeholder="What's on your mind?"
                             required
-                            className="h-28 w-full resize-none rounded-b-xl bg-black/30 px-3 py-2 text-sm text-white shadow-xl focus:outline-none focus:ring-2 focus:ring-green-400"
+                            className={`${inputClasses} h-32 resize-none`}
                         />
                     </div>
 
                     <Button
                         type="submit"
-                        size="md"
-                        className="w-full min-w-[280px] max-w-[480px] shadow-2xl transition-all duration-300 hover:shadow-2xl"
+                        size="sm"
+                        disabled={status === "sending"}
+                        className="w-full shadow-xl"
                     >
-                        Send
+                        {status === "sending" ? "Sending…" : "Send"}
                     </Button>
                 </form>
-            ) : (
-                <>
-                    {isSuccessful ? (
-                        <h1 className="text-lg font-semibold">
-                            Message has been sent!
-                        </h1>
-                    ) : (
-                        <h1 className="text-lg font-semibold">
-                            Message failed to send
-                        </h1>
-                    )}
-                </>
             )}
         </div>
     );
