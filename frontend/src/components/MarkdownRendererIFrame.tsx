@@ -40,7 +40,7 @@ const MarkdownRendererIFrame: React.FC<MarkdownRendererIFrameProps> = ({
     return (
         <div className="relative w-full max-w-5xl mx-auto my-8 flex justify-center">
             {showBiggerScreenMsg ? (
-                <div className="flex flex-col items-center justify-center border-4 border-primary rounded-xl py-16 px-6 text-center w-full">
+                <div className="glass flex flex-col items-center justify-center rounded-xl py-16 px-6 text-center w-full">
                     <p className="text-gray-300 text-base">
                         This content is interactive — please use a bigger screen
                     </p>
@@ -49,7 +49,7 @@ const MarkdownRendererIFrame: React.FC<MarkdownRendererIFrameProps> = ({
                 <div className="relative w-full" style={{ maxWidth: width }}>
                     {/* IFrame */}
                     <iframe
-                        className={`rounded-lg border-none`}
+                        className="block max-w-full rounded-lg border-none"
                         src={src}
                         width={width}
                         height={height}
@@ -61,7 +61,7 @@ const MarkdownRendererIFrame: React.FC<MarkdownRendererIFrameProps> = ({
                     {overlayActive && (
                         <div
                             onClick={() => setOverlayActive(false)}
-                            className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-white bg-opacity-60 text-primary font-bold text-lg rounded-lg cursor-pointer animate-breathing"
+                            className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black/50 backdrop-blur-[2px] text-white font-semibold uppercase tracking-[0.2em] text-sm rounded-lg cursor-pointer ring-1 ring-inset ring-white/15 transition-colors hover:bg-black/30"
                         >
                             Click to Interact
                         </div>

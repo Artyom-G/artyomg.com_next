@@ -23,6 +23,13 @@ const NavBar: React.FC = () => {
     const pathname = usePathname();
     const [isHovered, setIsHovered] = useState(false);
 
+    // trailingSlash: true yields "/projects/"; a single project lives under "/project/"
+    const isActive = (path: string) => {
+        const current = pathname.replace(/\/+$/, "") || "/";
+        if (path === "/projects") return current === "/projects" || current === "/project";
+        return current === path;
+    };
+
     const glassmorphismStyles: React.CSSProperties = {
         background: isHovered
             ? "rgba(24, 57, 50, 0.8)"
@@ -41,7 +48,7 @@ const NavBar: React.FC = () => {
                 <nav className="mx-auto flex w-full max-w-[1200px] items-center justify-between px-4">
                     <Logo />
                     <div
-                        className="flex justify-center items-center space-x-2 rounded-full py-1 min-w-[480px] shadow-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl"
+                        className="flex justify-center items-center space-x-2 rounded-full py-3 min-w-[480px] shadow-xl ring-1 ring-inset ring-white/10 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl"
                         style={glassmorphismStyles}
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
@@ -52,7 +59,7 @@ const NavBar: React.FC = () => {
                             <NavItem
                                 key={link.path}
                                 to={link.path}
-                                isActive={pathname === link.path}
+                                isActive={isActive(link.path)}
                             >
                                 {link.label}
                             </NavItem>
@@ -62,22 +69,28 @@ const NavBar: React.FC = () => {
             </header>
 
             {/* Mobile Bottom Bar */}
-            <nav className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-[rgba(24,57,50,0.9)] backdrop-blur-md border-t border-gray-700 flex justify-around items-center h-16">
-                {navLinks.map((link) => {
-                    const active = pathname === link.path;
-                    return (
-                        <Link
-                            key={link.path}
-                            href={link.path}
-                            className={`flex flex-col items-center justify-center text-xs transition-colors ${
-                                active ? "text-green-400" : "text-gray-300"
-                            }`}
-                        >
-                            {link.icon}
-                            <span className="mt-1">{link.label}</span>
-                        </Link>
-                    );
-                })}
+            <nav
+                className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-[rgba(18,44,38,0.85)] backdrop-blur-lg border-t border-white/10 pb-[env(safe-area-inset-bottom)]"
+                aria-label="Main navigation"
+            >
+                <div className="flex justify-around items-center h-16">
+                    {navLinks.map((link) => {
+                        const active = isActive(link.path);
+                        return (
+                            <Link
+                                key={link.path}
+                                href={link.path}
+                                aria-current={active ? "page" : undefined}
+                                className={`flex flex-col items-center justify-center gap-1 rounded-xl px-4 py-1.5 text-[10px] font-semibold tracking-widest transition-colors ${
+                                    active ? "text-green-400 bg-white/5" : "text-gray-300"
+                                }`}
+                            >
+                                {link.icon}
+                                <span>{link.label}</span>
+                            </Link>
+                        );
+                    })}
+                </div>
             </nav>
         </>
     );

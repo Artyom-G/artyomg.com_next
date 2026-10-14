@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import BackgroundParticles from "./BackgroundParticles";
 import particles from "@/assets/particles_calm";
@@ -19,16 +19,17 @@ const tips: string[] = [
 ];
 
 const LoadingScreen: React.FC = () => {
-    // Pick a random tip only once per mount
-    const randomTip = useMemo(() => {
-        return tips[Math.floor(Math.random() * tips.length)];
+    // Picked after mount so the server-rendered HTML matches the first client render
+    const [randomTip, setRandomTip] = useState("");
+    useEffect(() => {
+        setRandomTip(tips[Math.floor(Math.random() * tips.length)]);
     }, []);
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen text-white space-y-6">
             <BackgroundParticles particles={particles}/>
             <LoadingSpinner size={70} thickness={6} color="border-green-400" />
-            <p className="text-lg font-semibold animate-pulse text-center px-6">
+            <p className="min-h-7 text-lg font-semibold animate-pulse text-center px-6">
                 {randomTip}
             </p>
         </div>
