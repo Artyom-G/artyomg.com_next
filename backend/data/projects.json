@@ -194,5 +194,36 @@
             "PostgreSQL"
         ],
         "link": "https://socis.ca"
+    },
+    {
+        "title": "Free For All",
+        "filters":["GameDev"],
+        "tags": [
+            "Unity",
+            "C#",
+            "Pixel Art",
+            "Local Multiplayer"
+        ],
+        "link": "https://watt-tech.itch.io/ffa"
+    },
+    {
+        "title": "Roll 3310",
+        "filters":["GameDev"],
+        "tags": [
+            "Unity",
+            "C#",
+            "Game Jam"
+        ],
+        "link": "https://artyomg.itch.io/roll-3310"
+    },
+    {
+        "title": "Calculator Snake",
+        "filters":["GameDev"],
+        "tags": [
+            "Unity",
+            "C#",
+            "Game Jam"
+        ],
+        "link": "https://watt-tech.itch.io/calculator-snake"
     }
 ]
