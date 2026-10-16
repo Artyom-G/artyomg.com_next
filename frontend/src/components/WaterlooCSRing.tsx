@@ -23,7 +23,6 @@ const WaterlooCSRing = () => {
     const prevNextStroke = isSmall ? 2 : 3;
     const centerRadius = isSmall ? 52 : 70;
     const centerStroke = isSmall ? 3 : 4;
-    const centerIconSize = isSmall ? 44 : 58;
     // Every slot is as tall as the center button (CircleButton is 160px at radius 70) so labels line up
     const rowHeight = (160 * centerRadius) / 70;
 
@@ -46,8 +45,7 @@ const WaterlooCSRing = () => {
                 <img
                     src="https://cs.uwatering.com/icon.white.svg"
                     alt=""
-                    style={{ width: centerIconSize, maxWidth: "none" }}
-                    className="opacity-90 translate-x-[3px] translate-y-[4px]"
+                    className="w-full opacity-90"
                 />
             ),
         },
