@@ -35,6 +35,14 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+            <head>
+                {/* The static host also serves /<route>/index.html; rewrite it to /<route>/ before the router reads the URL */}
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `(function(){var l=window.location,p=l.pathname.replace(/\\/index\\.html$/,"/");if(p!==l.pathname)history.replaceState(history.state,"",p+l.search+l.hash)})();`,
+                    }}
+                />
+            </head>
             <body className={`${inter.className} scrollbar-thin antialiased`}>
                 <NavBar />
                 <main>{children}</main>
