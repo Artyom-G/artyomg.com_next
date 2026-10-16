@@ -39,7 +39,11 @@
     ".next/types/**/*.ts",
     "next-env.d.ts",
     "out/types/**/*.ts",
+<<<<<<< Updated upstream
     ".next/dev/types/**/*.ts"
+=======
+    "out/dev/types/**/*.ts"
+>>>>>>> Stashed changes
   ],
   "exclude": [
     "node_modules"
