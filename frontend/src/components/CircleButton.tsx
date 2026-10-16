@@ -104,7 +104,7 @@ const Logo: React.FC<LogoProps> = ({ onClick, radius, strokeWidth = 4, children,
                 className="absolute rounded-full shadow-xl hover:shadow-2xl"
                 style={glassStyle}
             >
-                <div style={{ width: iconPx, height: iconPx }}>
+                <div className="flex items-center justify-center" style={{ width: iconPx, height: iconPx }}>
                     {children}
                 </div>
             </div>
