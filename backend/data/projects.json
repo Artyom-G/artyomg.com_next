@@ -1,5 +1,18 @@
 [
     {
+        "title": "Geospatial Foundation Model Usability",
+        "filters":["Featured", "Research", "AI"],
+        "tags": [
+            "HCI Research",
+            "Geospatial AI",
+            "Earth Observation",
+            "University of Cambridge",
+            "Survey Research",
+            "Rubric Evaluation"
+        ],
+        "link": "https://arxiv.org/abs/2608.03804v1"
+    },
+    {
         "title": "Self-Hosting Server",
         "filters":["Featured", "Infrastructure"],
         "tags": [
