@@ -4,7 +4,7 @@
 
 **[How Usable Are Geospatial Foundation Models? A Systematic Evaluation of 89 Models](https://arxiv.org/abs/2608.03804v1)** is a human-computer interaction (HCI) research paper I co-authored with researchers at the **University of Cambridge**.
 
-Geospatial foundation models are AI models trained on large amounts of geographic data, often satellite imagery, so they can be adapted to tasks such as environmental monitoring. Research usually compares them on benchmark accuracy. A model can score well on a benchmark and still be very hard for an ecologist to actually use.
+Geospatial Foundation Models (GeoFMs) are AI models trained on large amounts of geographic data, often satellite imagery, so they can be adapted to tasks such as environmental monitoring. Research usually compares them on benchmark accuracy. A model can score well on a benchmark and still be very hard for an ecologist to actually use.
 
 We built a framework for evaluating these models from the point of view of the scientists who are meant to use them, and applied it to 89 models.
 
@@ -19,7 +19,7 @@ Kenzy and I collaborated with the Cambridge team remotely from Waterloo.
 
 # My Contribution
 
-The paper credits me, equally with Kenzy, with **methodology, investigation, data curation, validation, and reviewing and editing the paper**.
+The paper credits me, equally with Kenzy, with **investigation, methodology and validation** of GeoFMs.
 
 # The Problem
 
