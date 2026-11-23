@@ -1,5 +1,16 @@
 [
     {
+        "title": "Prime Suspects",
+        "filters":["Web", "GameDev"],
+        "tags": [
+            "Node.js",
+            "Socket.IO",
+            "Express.js",
+            "Web Audio"
+        ],
+        "link": "https://github.com/Artyom-G/prime_suspects"
+    },
+    {
         "title": "Geospatial Foundation Model Usability",
         "filters":["Featured", "Research", "AI"],
         "tags": [
