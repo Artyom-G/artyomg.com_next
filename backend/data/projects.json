@@ -1,16 +1,5 @@
 [
     {
-        "title": "Prime Suspects",
-        "filters":["Web", "GameDev"],
-        "tags": [
-            "Node.js",
-            "Socket.IO",
-            "Express.js",
-            "Web Audio"
-        ],
-        "link": "https://github.com/Artyom-G/prime_suspects"
-    },
-    {
         "title": "Geospatial Foundation Model Usability",
         "filters":["Featured", "Research", "AI"],
         "tags": [
@@ -133,6 +122,27 @@
             "Figma"
         ],
         "link": "https://github.com/Artyom-G/willchai.com"
+    },
+    {
+        "title": "Chord-It",
+        "filters":["Web", "GameDev"],
+        "tags": [
+            "Guitar",
+            "Music",
+            "Web Audio"
+        ],
+        "link": "https://chord-it.artyomg.com"
+    },
+    {
+        "title": "Prime Suspects",
+        "filters":["Web", "GameDev"],
+        "tags": [
+            "Node.js",
+            "Socket.IO",
+            "Express.js",
+            "Web Audio"
+        ],
+        "link": "https://github.com/Artyom-G/prime_suspects"
     },
     {
         "title": "FitFeed",
