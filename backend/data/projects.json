@@ -125,7 +125,7 @@
     },
     {
         "title": "Chord-It",
-        "filters":["Web", "GameDev"],
+        "filters":["Web"],
         "tags": [
             "Guitar",
             "Music",
@@ -249,6 +249,16 @@
             "Game Jam"
         ],
         "link": "https://artyomg.itch.io/roll-3310"
+    },
+    {
+        "title": "Ray Tracer",
+        "filters":["GameDev"],
+        "tags": [
+            "C++",
+            "Path Tracing",
+            "CMake"
+        ],
+        "link": "https://github.com/Artyom-G/RayTracingInOneWeekend"
     },
     {
         "title": "Calculator Snake",
