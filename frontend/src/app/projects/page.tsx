@@ -17,13 +17,21 @@ type Project = {
 
 const ALL = "All";
 
+// URL value for a filter: "GameDev" <-> "gamedev"
+const toParam = (filter: string) => filter.toLowerCase().replace(/\s+/g, "-");
+
+const readFilterParam = () =>
+    typeof window === "undefined" ? null : new URLSearchParams(window.location.search).get("filter");
+
 export default function ProjectsPage() {
     const BACKEND_API = process.env.NEXT_PUBLIC_BACKEND_API;
 
     const [projects, setProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
-    const [activeFilter, setActiveFilter] = useState(ALL);
+    // Filter from ?filter= (e.g. ?filter=gamedev); read once on load. Safe for static export:
+    // the first render is the loading screen, so server and client markup still match.
+    const [filterParam, setFilterParam] = useState<string | null>(readFilterParam);
 
     const formatTitle = (title: string) => title.toLowerCase().replace(/\s+/g, "_");
 
@@ -45,10 +53,25 @@ export default function ProjectsPage() {
         fetchProjects();
     }, [BACKEND_API]);
 
+    // Keep the URL in sync so a filtered view can be shared
+    const selectFilter = (filter: string) => {
+        setFilterParam(filter === ALL ? null : toParam(filter));
+        const url = new URL(window.location.href);
+        if (filter === ALL) url.searchParams.delete("filter");
+        else url.searchParams.set("filter", toParam(filter));
+        window.history.replaceState(null, "", url);
+    };
+
     const filters = useMemo(() => {
         const unique = new Set(projects.flatMap((p) => p.filters));
         return [ALL, ...unique];
     }, [projects]);
+
+    // Unknown or missing ?filter= values fall back to All
+    const activeFilter = useMemo(
+        () => filters.find((f) => filterParam && toParam(f) === toParam(filterParam)) ?? ALL,
+        [filters, filterParam]
+    );
 
     const visibleProjects = useMemo(
         () => activeFilter === ALL ? projects : projects.filter((p) => p.filters.includes(activeFilter)),
@@ -90,7 +113,7 @@ export default function ProjectsPage() {
                                         key={filter}
                                         role="tab"
                                         aria-selected={active}
-                                        onClick={() => setActiveFilter(filter)}
+                                        onClick={() => selectFilter(filter)}
                                         className={`min-h-0 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide transition-all duration-200 ${
                                             active
                                                 ? "bg-green-400 text-[#0b2a1f] shadow-lg shadow-green-900/40"
