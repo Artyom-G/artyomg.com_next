@@ -2,7 +2,7 @@
 
 # Project Overview
 
-A CPU path tracer written from scratch in C++, following Peter Shirley's *Ray Tracing in One Weekend*. It renders a procedurally scattered field of spheres around three hero spheres, writing the result out as an image (the banner above is one of its renders).
+A CPU path tracer written in C++. It renders a procedurally scattered field of spheres around three hero spheres, writing the result out as an image (the banner above is one of its renders).
 
 # Technologies Used
 
